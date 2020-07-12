@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import GoogleAuth from './GoogleAuth';
 const Header = () => {
   return (
-    <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-4">
+    <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-4 mb-12">
       <div className="flex items-center flex-shrink-0 text-white mr-6 ">
         <svg
           className="fill-current h-8 w-8 mr-2"
@@ -37,7 +37,7 @@ const Header = () => {
           </a>
           <a
             href="#responsive-header"
-            className="block mt-2 md:inline-block  lg:inline-block md:mt-0  lg:mt-0 text-teal-200 hover:text-white  justify-end"
+            className="block mt-2 md:inline-block  lg:inline-block md:mt-0  lg:mt-0 text-teal-200 hover:text-white mr-4  justify-end"
           >
             Blog
           </a>
