@@ -1,8 +1,9 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
+import { createStream } from '../../actions/index';
 class StreamCreate extends React.Component {
   renderError({ error, touched }) {
-    console.log(error, touched);
     if (touched && error) {
       return (
         <div>
@@ -27,16 +28,16 @@ class StreamCreate extends React.Component {
       </div>
     );
   };
-  onSubmit(formValues) {
-    console.log(formValues);
-  }
+  onSubmit = (formValues) => {
+    this.props.createStream(formValues);
+  };
   render() {
     return (
-      <section className="w-full flex justify-center">
-        <div className=" max-w-md">
+      <section className="w-full flex items-center justify-center">
+        <div className="max-w-md">
           <form
             onSubmit={this.props.handleSubmit(this.onSubmit)}
-            className="bg-white shadow-md rounded px-16 pt-6 pb-8 mb-4"
+            className="bg-white shadow-md rounded px-16 pt-6 pb-8"
             action=""
           >
             <Field
@@ -69,4 +70,6 @@ const validate = (formValues) => {
   }
   return errors;
 };
-export default reduxForm({ form: 'StreamCreate', validate })(StreamCreate);
+const formWrapped = reduxForm({ form: 'StreamCreate', validate })(StreamCreate);
+
+export default connect(null, { createStream })(formWrapped);
