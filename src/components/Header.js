@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import GoogleAuth from './GoogleAuth';
 const Header = () => {
   return (
-    <nav className="flex flex-wrap items-center  bg-teal-500 p-4 mb-12">
+    <nav className="flex flex-wrap items-center  bg-teal-500 shadow-lg p-4">
       <div className="flex items-center justify-between  flex-shrink-0 text-white mr-6 ">
         <svg
           className="fill-current h-8 w-8 mr-2"
@@ -16,7 +16,7 @@ const Header = () => {
         </svg>
         <Link
           to="/"
-          className="font-semibold text-xl tracking-tight text-white"
+          className="font-semibold text-xl tracking-tight text-teal-100 hover:text-white"
         >
           Stream CSS
         </Link>

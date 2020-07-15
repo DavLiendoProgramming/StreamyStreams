@@ -1,4 +1,4 @@
-import _, { mapKeys } from 'lodash';
+import _ from 'lodash';
 import {
   CREATE_STREAM,
   FETCH_STREAM,
